@@ -1,0 +1,891 @@
+body {
+    background-image: url('./PortalImages/blurBackground.png');
+    /* background-image: url('C:/Users/HP/OneDrive/Documentos/PaperPortal/PortalImages/blurBackground.png'); */
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    background-color: rgb(129, 129, 129);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    margin: 0;
+}
+
+.homeheader{
+    /* width: 98.8%; */
+    width: 100%;
+    height: 80px;
+    border: 0px solid #000;
+    background-color: rgb(19, 38, 60); 
+    color: #fff;
+    /* border-radius: 12px; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    display: flex;
+    /* margin-top: 6px; */
+    position: fixed;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+
+.subheader button{
+  padding: 10px;
+}
+
+.subheader {
+    width: 98.8%;
+    height: 35px;
+    border: 0px solid #000;
+    background-color: rgb(60, 102, 151); 
+    color: #fff;
+    border-radius: 12px;
+    margin-top: 95px;
+    top: 0;
+    position: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+
+
+    /* width: 100%; */
+    /* height: 70px; */
+    /* border: 2px solid #000; */
+    /* background-color: rgb(214, 215, 223); */
+    /* background-color: aqua;  */
+    /* color: #fff; */
+    /* border-radius: 6px; */
+    display: flex; 
+    justify-content: space-between; 
+    /* margin-bottom: 20px; */
+
+    /* display: flex;  */
+    /* justify-content: space-between;  */
+
+
+    /* display: flex; */
+    /* gap: 1440px; */
+    /* flex-direction: row; */
+    /* display: grid; */
+
+
+}
+
+
+.coursearea {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  padding: 2px;
+  /* border-radius: 12px; */
+  width: 100%;
+  /* background-color: blue; */
+
+}
+
+.coursebutton{
+
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  margin: 10px;
+  font-size: 14px;
+  border: 0px solid #000;
+  letter-spacing: 2px;
+  border-radius: 12px;
+  background-color: rgba(0,0,0,0.1);
+  /* background-color: aquamarine; */
+  color: #fff;
+  transition: .5s all; 
+  /* border: 2px solid #000; */
+}
+
+.dipictcoursebutton{
+
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  margin: 10px;
+  font-size: 14px;
+  border: 0px solid #000;
+  letter-spacing: 2px;
+  border-radius: 12px;
+  background-color: rgba(0,0,0,0.2);
+  background-color:#596672;
+  color: #fff;
+  transition: .5s all; 
+  border:1px solid #fff;
+}
+
+.modebutton{
+
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  margin: 10px;
+  font-size: 14px;
+  border: 0px solid #000;
+  letter-spacing: 2px;
+  border-radius: 12px;
+  background-color: rgba(0,0,0,0.1);
+  /* background-color:#596672; */
+  color: #fff;
+  transition: .5s all; 
+  /* border:1px solid #fff; */
+}
+
+.modebutton.active {
+  background-color: rgba(0,0,0,0.2);
+
+  /* background-color:rgba(89, 102, 114, 0.6); */
+  border:1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.modebutton:hover {
+  background-color: #9a9a9a;
+  /* background-color: #0056b3; */
+
+}
+
+.modebutton.active:hover {
+  background-color: rgb(19, 38, 60); 
+
+}
+
+.coursebutton.highlighted {
+  background-color: #f0f0f0; /* Change this to the color you want for the highlighted state */
+  border: 2px solid #007bff; /* Optional: Add a border to further distinguish the highlighted state */
+  color: #007bff; /* Optional: Change the text color */
+
+  border: 2px solid rgb(60, 102, 151); /* Optional: Add a border to further distinguish the highlighted state */
+  color: rgb(60, 102, 151); /* Optional: Change the text color */
+}
+
+.papers .no-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #999;
+  font-size: 18px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+.main{
+  width: 100%;
+  height: 70px;
+  /* border: 2px solid #000; */
+  background-color: rgb(214, 215, 223);
+  /* background-color: aqua;  */
+  color: #fff;
+  border-radius: 6px;
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 20px;
+}
+
+.logo {
+    height: 60px;
+    padding: 8px;
+    padding-left: 50px;
+}
+
+.navigator{
+    border: 0px solid #000;
+    color: #fff;
+    border-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    position: fixed;
+    /* top: 0; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: rgb(19, 38, 60); 
+    height: 6%;
+    width: 25%;
+    /* margin-top: 710px; */
+    top: 70%;
+    margin-bottom: 1px;
+    margin-left: 8px;
+}
+
+
+
+
+.dropdown13 {
+      top: 0%;
+      padding-top: 0%;
+      height: 60%;
+      margin-left: 10px;
+      margin-right: 10px;
+      /* padding-right: 20px; */
+
+      width: 335px;
+
+      border-radius: 6px;
+      font-family: "Inter", sans-serif;
+      background-color: #d11515;
+      /* background-color: #a02a2a; */
+      box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.sidebar {
+    border: 0px solid #000;
+    /* background-color: rgb(60, 102, 151);  */
+    color: #fff;
+    border-radius: 12px;
+    /* border-bottom-left-radius: 0px; */
+    top: 155px;
+    /* height: 10%; */
+                                                        /* whhhhhhhhhhhaaaaaatttttttt tf is thisssssss*/
+    width: 25%;
+    margin-left: 15px;
+    position: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: rgb(243, 241, 241); 
+    background-color: rgb(243, 241, 241); 
+    /* background-color: rgb(188, 55, 162);  */
+
+    display: grid;
+    align-content: start;
+    /* align-items: center; */
+    /* place-content: center; */
+    justify-content: center;
+    /* flex-direction: column;  */
+    /* border-top-left-radius: 0px; */
+
+    }
+
+.course{
+  /* background-color:chartreuse; */
+  /* width: 375px; */
+  /* padding: 0px; */
+  /* border-radius: 12px; */
+  /* justify-content: center; */
+  /* align-content: center; */
+
+}
+
+
+.holder{
+    width: 100%;
+    display: flex;
+    background-color:rgb(36, 202, 72);
+    z-index: 1000;
+}
+
+
+
+.module{
+  
+  display: grid;
+  /* align-content: start; */
+  /* align-self: center; */
+  /* padding: 0px; */
+
+  /* width: 25px; */
+
+  margin: 4px;
+  height: 60px;
+  border: 0px solid #000;
+  /* background-color: rgb(214, 215, 223);  */
+  /* background-color: rgb(198, 195, 33);  */
+
+  color: #fff;
+  border-radius: 6px;
+  /* display: flex;  */
+  /* justify-content: space-between;  */
+  
+}
+
+.modulebutton {
+  /* width: 25px; */
+  width:32.8cap;
+  height: 100%;
+  text-align: center;
+  font-size: 14px;
+  border: 0px solid #fff;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.1);
+  /* background-color: blue; */
+  color: #fff;
+  transition: .5s all; 
+  margin-left: 8.5px;
+
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+
+
+.modulebutton.highlighted {
+  background-color: #f0f0f0; /* Change this to the color you want for the highlighted state */
+  border: 2px solid #007bff; /* Optional: Add a border to further distinguish the highlighted state */
+  color: #007bff; /* Optional: Change the text color */
+
+  border: 2px solid rgb(60, 102, 151); /* Optional: Add a border to further distinguish the highlighted state */
+  color: rgb(60, 102, 151); /* Optional: Change the text color */
+}
+
+.uploadDetailsForm{
+  z-index: 1;
+  border: 0px solid #000;
+  color: #fff;
+  border-radius: 12px;
+  top: 155px;
+  width: 25%;
+  margin-left: 15px;
+  position: fixed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: rgb(243, 241, 241); 
+  background-color: rgb(243, 241, 241); 
+  display: grid;
+  align-content: start;
+  justify-content: center;
+
+}
+
+
+#uploadArea{
+  /* position: fixed; */
+  position: relative;
+  top: 155px; 
+  bottom: 20px; 
+  left: 27%; 
+  right: 9px; 
+  width: 72%;
+  align-items: center;
+  /* background-color:chartreuse;  */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  /* display:flexbox; */
+
+
+}
+
+
+#dropZone{
+    /* position: fixed; */
+    position: relative;
+    top: 155px; 
+    bottom: 20px; 
+    left: 27%; 
+    right: 9px; 
+    width: 72%;
+    align-items: center;
+    /* background-color:chartreuse;  */
+    background: rgba(255, 53, 53, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    /* display:flexbox; */
+
+
+}
+
+.papers{
+    /* position: fixed; */
+    position: relative;
+    top: 155px; 
+    bottom: 20px; 
+    left: 27%; 
+    right: 9px; 
+    width: 72%;
+    align-items: center;
+    /* background-color:chartreuse;  */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    /* display:flexbox; */
+}
+.papers.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4); /* Light background for blur effect */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+.papers.empty::before {
+  content: "No module has been selected";
+  position: absolute;
+  font-size: 1.5em; /* Adjust font size as needed */
+  color: #333; /* Text color */
+  opacity: 0.8; /* Slightly transparent */
+}
+
+.papers:not(.empty) {
+  display: block; /* or whatever layout you need */
+  background: transparent; /* Remove background for normal display */
+  backdrop-filter: none; /* Remove blur for normal display */
+  background: rgba(255, 255, 255, 0.1); /* Light background for blur effect */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+
+
+
+
+.papers::-webkit-scrollbar {
+    width: 1px;
+    display: none;
+}
+
+.papers::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+.papers::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.papers:hover::-webkit-scrollbar {
+    /* display: block;  */
+
+}
+
+.pagelayout{
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #d08024;
+    z-index: 1000;
+}
+
+
+input[type=previewbutton] {
+
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    border: 0px solid #000;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #fff;
+    transition: .5s all; 
+
+}
+
+input[type=downloadbutton] {
+
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    border: 0px solid #fff;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #fff;
+    transition: .5s all; 
+
+}
+
+input[type=previewbutton]:hover {
+    cursor: pointer;
+    background-color: #d08024;
+}
+
+input[type=downloadbutton]:hover {
+    cursor: pointer;
+    background-color: #d02424;
+}
+
+#file::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+#file {
+
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    border: 0px solid #fff;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #fff;                     
+    transition: .5s all; 
+
+}
+
+#file:hover {
+    cursor: pointer;
+    /* background-color: #122748; */
+}
+
+.filename, .preview, .download, .delete {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    padding: 10px; 
+    border-radius: 12px;
+
+}
+
+.filename {
+    /* width: 60%; */
+    width: 80cap;
+    /* background-color: lightblue; */
+}
+
+
+.delete{
+  width: 10%;
+}
+
+.delete:hover{
+  /* background-color: #d11515; */
+}
+
+.preview {
+    width: 20%;
+    /* background-color: blue; */
+}
+
+.preview:hover {
+    /* width: 25%; */
+    /* background-color: #b3adab; */
+}
+
+
+
+.download {
+    width: 20%;
+    /* background-color: green; */
+}
+
+.checkbutton {
+    /* background-color: red; */
+    display: flex;
+    align-items: center; 
+    padding-left: 10px;
+    padding-right: 20px;
+    border-radius: 12px;
+}
+
+
+#tabbutton{
+
+
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  font-size: 14px;
+  border: 0px solid #fff;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.1);
+  color: #fff;                     
+  transition: .5s all; 
+
+}
+
+#tabbutton:hover {
+    cursor: pointer;
+    background-color: #122748;
+}
+
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.checkbox12 {
+    position: relative;
+  }
+  
+  .checkbox12 input,
+  .checkbox12 svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+  
+  .checkbox12 input {
+    position: relative;
+    outline: none;
+    background: rgb(243, 241, 241);
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+    box-shadow: inset 0 0 0 1px #0b0b0b;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .checkbox12 input:focus {
+    outline: none;
+    background-color: rgb(243, 241, 241)000;
+    box-shadow: inset 0 0 0 1px #0b0b0b;
+  }
+  
+  .checkbox12 input:hover {
+    box-shadow: inset 0 0 0 2px #9898a3;
+  }
+  
+  .checkbox12 input:checked {
+    box-shadow: inset 0 0 0 2px #1e2235;
+  }
+  
+  .checkbox12 svg {
+    pointer-events: none;
+    fill: none;
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #1e2235;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    transform: scale(1) translateZ(0);
+  }
+  
+  .checkbox12 input:checked + svg {
+    stroke-dasharray: 19.6 105.28;
+    stroke-dashoffset: 125.36;
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s;
+  }
+  
+  .checkbox12 svg {
+    stroke-dasharray: 105.28;
+    stroke-dashoffset: 105.28;
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s;
+  }
+  
+
+
+
+
+
+
+  .checkbox1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .checkbox1 input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkbox1 span {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    height: 27px;
+    width: 27px;
+    border-radius: 4px;
+    border: 0px solid #000;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .checkbox1 input:checked + span {
+    background-color: rgb(19, 38, 60);
+    border-color: black;
+    box-shadow: 0 0 5px rgb(54, 54, 54);
+  }
+  
+  .checkbox1:hover span {
+    background-color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .checkbox1 input:checked + span:after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    width: 8px;
+    height: 17px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    animation: checkbox1-animation 0.3s ease forwards;
+  }
+  
+  @keyframes checkbox1-animation {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+  }
+  
+
+
+
+
+.dropdown13-menu {
+    
+    display: none; /* Initially hidden */
+    position: fixed; /* Position it absolutely relative to the button */
+    top: 100%; /* Position it right below the button */
+    left: 0; /* Align it with the button's left edge */
+    width: 100%; /* Make the dropdown menu the same width as the button */
+    background-color: white; /* Background color */
+    border: 1px solid #ddd; /* Border style */
+    /* padding: 10px;  */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    z-index: 1000; /* Ensure it appears above other elements */
+    box-sizing: border-box;
+}
+
+  .dropdown13 .arrow-down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+    transition: transform ease-in-out 0.3s;
+  }
+  .dropdown13 li{
+    list-style: none;
+  }
+  .dropdown13 li:first-child a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+  }
+  .dropdown13-links a {
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  .dropdown13-button {
+    position: relative;
+    /* position: absolute; */
+    /* position: fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdown13-button > a {
+    position: relative;
+    padding: 15px 0;
+    margin-left: 0px;
+    text-align: center;
+    z-index: 1;
+    transition: 250ms ease all;
+  }
+  .dropdown13-links {
+    position: absolute;
+    /* position: fixed; */
+    /* position: static; */
+    /* position: sticky; */
+    top: 110%;
+    left: -35px;
+    width: 325px;
+    visibility: hidden;
+    /* visibility: visible; */
+    /* padding-left: 0px; */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .dropdown13-button:hover > ul {
+    visibility: visible;
+  }
+  .dropdown13-links > li {
+    margin: 0;
+    /* list-style: none; */
+
+    /* width: 315px; */
+    margin-top: 4px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 250ms cubic-bezier(0.42, 0.83, 0.49, 1.35);
+  }
+  .dropdown13-button:hover > ul > li {
+    transform: scaleY(1);
+  }
+  .dropdown13-links > li > a {
+    display: block;
+    text-align: center;
+    /* text-decoration: none; */
+    border-radius: 6px;
+    padding: 10px;
+    /* background-color: #000; */
+    transition: 250ms ease all;
+    box-sizing: border-box;
+  }
+  .dropdown13-links > li > a:hover {
+    transform: scale(1.05);
+  }
+  .dropdown13-button:hover > ul > li > a,
+  .dropdown13-button:focus > ul > li > a,
+  .dropdown13-button:focus-within > ul > li > a {
+    box-shadow: inset 0 0 0 3rem rgba(0, 0, 0, 0.1), inset 0 0 0 3rem rgb(104, 104, 107);
+  }
+  .dropdown13-button:hover .arrow-down {
+    transform: rotate(180deg);
+    /* display: none; */
+  }
+  
+  .hidden {
+    display: none;
+}

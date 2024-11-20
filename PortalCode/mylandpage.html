@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3P - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .role-selection {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .role-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .role-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .auth-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .toggle-form {
+            color: #3498db;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Past Paper Portal</h1>
+    </div>
+
+    <div class="container">
+        <div class="role-selection" id="roleSelection">
+            <div class="role-card" onclick="selectRole('lecturer')">
+                <!-- <img src="/api/placeholder/100/100" alt="Lecturer Icon"> -->
+                <h2>Lecturer</h2>
+                <p>Access course management and resource upload tools</p>
+            </div>
+            <div class="role-card" onclick="selectRole('student')">
+                <!-- <img src="/api/placeholder/100/100" alt="Student Icon"> -->
+                <h2>Student</h2>
+                <p>Access course materials and resources</p>
+            </div>
+        </div>
+
+        <div class="auth-container" id="authContainer">
+            <div class="error-message" id="errorMessage"></div>
+            
+            <!-- Sign In Form -->
+            <form id="signInForm">
+                <h2 style="margin-bottom: 1rem; text-align: center;">Sign In</h2>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="emailSignIn" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="passwordSignIn" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+                <p style="text-align: center;">
+                    Don't have an account? 
+                    <span class="toggle-form" onclick="toggleForms()">Sign Up</span>
+                </p>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signUpForm" style="display: none;">
+                <h2 style="margin-bottom: 1rem; text-align: center;">Sign Up</h2>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="nameSignUp" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="emailSignUp" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="passwordSignUp" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPasswordSignUp" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p style="text-align: center;">
+                    Already have an account? 
+                    <span class="toggle-form" onclick="toggleForms()">Sign In</span>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedRole = '';
+
+        function selectRole(role) {
+            selectedRole = role;
+            document.getElementById('roleSelection').style.display = 'none';
+            document.getElementById('authContainer').style.display = 'block';
+            
+            // Update header text based on role
+            const headerText = document.querySelector('.header h1');
+            headerText.textContent = role === 'lecturer' ? 'Lecturer Portal' : 'Student Portal';
+        }
+
+        function toggleForms() {
+            const signInForm = document.getElementById('signInForm');
+            const signUpForm = document.getElementById('signUpForm');
+            
+            if (signInForm.style.display === 'none') {
+                signInForm.style.display = 'block';
+                signUpForm.style.display = 'none';
+            } else {
+                signInForm.style.display = 'none';
+                signUpForm.style.display = 'block';
+            }
+            
+            // Clear error message when switching forms
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        // Handle Sign In
+        document.getElementById('signInForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailSignIn').value;
+            const password = document.getElementById('passwordSignIn').value;
+
+            // Here you would typically make an API call to authenticate
+            fetch('http://localhost:3000/api/auth/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    role: selectedRole
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Store the token
+                    localStorage.setItem('authToken', data.token);
+                    // Redirect based on role
+                    window.location.href = `/${selectedRole}-dashboard.html`;
+                } else {
+                    showError(data.message || 'Invalid credentials');
+                }
+            })
+            .catch(error => {
+                showError('An error occurred. Please try again.');
+            });
+        });
+
+        // Handle Sign Up
+        document.getElementById('signUpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('nameSignUp').value;
+            const email = document.getElementById('emailSignUp').value;
+            const password = document.getElementById('passwordSignUp').value;
+            const confirmPassword = document.getElementById('confirmPasswordSignUp').value;
+
+            if (password !== confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+
+            // Here you would typically make an API call to register
+            fetch('http://localhost:3000/api/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                    role: selectedRole
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message and switch to sign in
+                    alert('Registration successful! Please sign in.');
+                    toggleForms();
+                } else {
+                    showError(data.message || 'Registration failed');
+                }
+            })
+            .catch(error => {
+                showError('An error occurred. Please try again.');
+            });
+        });
+
+        function showError(message) {
+            const errorElement = document.getElementById('errorMessage');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        // Check if user is already authenticated
+        const authToken = localStorage.getItem('authToken');
+        if (authToken) {
+            // Verify token and redirect if valid
+            fetch('http://localhost:3000/api/auth/verify', {
+                headers: {
+                    'Authorization': `Bearer ${authToken}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = `/${data.role}-dashboard.html`;
+                }
+            });
+        }
+    </script>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCqbm32wA0YPHduBjkAIQbIVJ-vzS7NJMw",
+      authDomain: "paperportalcode.firebaseapp.com",
+      projectId: "paperportalcode",
+      storageBucket: "paperportalcode.firebasestorage.app",
+      messagingSenderId: "584584560603",
+      appId: "1:584584560603:web:ae383a2688798cdf08b1fe",
+      measurementId: "G-HMZ0Y04NMN"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+
+
+</html>

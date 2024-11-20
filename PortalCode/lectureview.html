@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3P Lecturer Portal</title>
+    <link rel="stylesheet" href="homecss.css">
+    <link rel="icon" type="image/png" href="../PortalImages/umplogo1b.jpg.png">
+    <!-- <link rel="icon" type="image/png" href="C:\Users\HP\OneDrive\Documentos\PaperPortal\PortalImages\umplogo1b.jpg.png"> -->
+    <script src="masterscript.js" defer></script>
+</head>
+<body>
+    <div class="pagelayout"> 
+        <div class="homeheader">
+            <div>
+                <img src="../PortalImages/NavyLogo.png" alt="University Logo" class="logo">
+
+                <!-- <img src="C:\Users\HP\OneDrive\Documentos\PaperPortal\PortalImages\NavyLogo.png" alt="University Logo" class="logo"> -->
+            </div>
+            <div></div>
+            <hr>
+            <div></div>
+            <div></div>
+            <!-- <h4 id="course-header"></h4> -->
+        </div>
+
+        <!-- <div class="subheader"> -->
+            <!-- <div class="coursearea"> -->
+                <!-- <input type="button" class="viewbutton" value="VIEW"> -->
+                <!-- <input type="button" class="coursebutton" value="UPLOAD"> -->
+            <!-- </div> -->
+        <!-- </div> -->
+
+        <div class="subheader">
+            <div class="coursearea">
+                <input type="button" class="modebutton active" id="viewButton" value="VIEW">
+                <input type="button" class="modebutton" id="uploadButton" value="UPLOAD">
+            </div>
+        </div>
+        
+        <!-- Add this new div for the upload area -->
+        <div id="uploadArea" style="display: none;">
+            <div id="dropZone">
+                Drag and drop files here or click to select files
+                <input type="file" id="fileInput" style="display: none;" multiple>
+            </div>
+            <div id="uploadStatus"></div>
+        </div>
+
+        <div id="fileDetailsForm" style="display: none;">
+            <form id="uploadDetailsForm">
+              <label for="fileName">File Name:</label>
+              <input type="text" id="fileName" name="fileName" required>
+              
+              <label for="fileYear">Year:</label>
+              <select id="fileYear" name="fileYear" required>
+                <option value="">Select Year</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2021</option>
+
+              </select>
+              
+              <label for="fileMonth">Month:</label>
+              <select id="fileMonth" name="fileMonth" required>
+                <option value="">Select Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              
+              <fieldset>
+                <legend>File Type:</legend>
+                <input type="radio" id="exam" name="fileType" value="exam" required>
+                <label for="exam">Exam</label>
+                <input type="radio" id="test" name="fileType" value="test">
+                <label for="test">Test</label>
+                <input type="radio" id="assignment" name="fileType" value="assignment">
+                <label for="assignment">Assignment</label>
+                <input type="radio" id="other" name="fileType" value="other">
+                <label for="other">Other</label>
+              </fieldset>
+              
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+
+        <div class="holder">
+            <div class="sidebar">   
+                <div class="course">
+                    <div class="dropdown13">
+                        <ul>
+                            <li class="dropdown13-button">
+                                <a id="course-header">SELECT STUDY YEAR<span class="arrow-down"></span></a>
+                                <ul class="dropdown13-links">
+                                    <li><a href="/#" class="dropdown-item">FIRST YEAR</a></li>
+                                    <li><a href="/#" class="dropdown-item">SECOND YEAR</a></li>
+                                    <li><a href="/#" class="dropdown-item">THIRD YEAR</a></li>
+                                    <li><a href="/#" class="dropdown-item">ADVANCED</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modules"></div>
+            </div>
+            <div class="papers"></div>
+        </div>
+    </div>
+</body>
+</html>

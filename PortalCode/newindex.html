@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3P - Past Paper Portal</title>
+    <link rel="stylesheet" href="newcss.css">
+    <link rel="icon" type="image/png" href="C:\Users\HP\OneDrive\Documentos\PaperPortal\PortalImages\umplogo1b.jpg.png">
+    <script>
+        function navigateToLanding() {
+            window.location.href = 'landing.html';
+        }
+        function navigateToHomeLanding() {
+            window.location.href = 'homehtml.html';
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="floating-div">
+           <div class="content">
+            <div class="header">
+                <img src="C:\Users\HP\OneDrive\Documentos\PaperPortal\PortalImages\NavyLogo.png" alt="University Logo" class="logo">
+                <h4>PAST PAPER PORTAL</h4>
+                <p>Creating Opportunities</p>
+            </div>
+            
+            <div class="error-field">
+                Your session has timed out. Please log in again.
+            </div>
+            
+            <input type="text" placeholder="Student Number" class="input-field">
+            <input type="password" placeholder="Password" class="input-field">
+
+            <button class="login-button" onclick="navigateToHomeLanding()">Log in</button>
+            
+            <a href="#" class="forgot-password">Lost password?</a>
+
+            <!-- <hr class="divider"> -->
+            <hr>
+
+            <button class="cookies-button" onclick="navigateToLanding()" >Cookies notice</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
